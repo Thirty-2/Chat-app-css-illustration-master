@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | [Challenge Name Here]</title>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { --color1: hsl(276, 100%, 81%); --color2: hsl(276, 55%, 52%); --color3: hsl(271, 15%, 43%); --color4: hsl(206, 6%, 79%); --color5: hsl(271, 36%, 24%); --color6: hsl(270, 7%, 64%); --color7: hsl(293, 100%, 63%); --color8: hsl(264, 100%, 61%); --color9: hsl(0, 0%, 100%); --color10: hsl(270, 20%, 96%); --color11: hsl(271, 36%, 24%); --color12: hsl(289, 100%, 72%); overflow: hidden; }
+
+    /* Utilities */
+    h2 { font-size: 2.2rem; color: var(--color11); }
+    h3 { color: var(--color9); font-size: 1rem; }
+    p { font-size: 1.1rem; color: var(--color9); }
+    #p1 { font-size: .7rem; color: var(--color9); opacity: .3; }
+    #p2 { width: 11rem; font-size: .8rem; background-color: var(--color4); padding: .6rem; border-radius: .8rem; border-bottom-left-radius: .3rem; color: var(--color7); }
+    #p3 { position: relative; right: -1.5rem; width: 11rem; font-size: .8rem; background-color: var(--color9); padding: .8rem;  border-radius: .8rem; border-bottom-right-radius: .3rem; color: var(--color11);}
+    #p4 { font-size: .8rem; }
+    #p-r { font-size: .9rem; color: var(--color6); }
+    span {  }
+
+
+    /* Container */
+    #Container { width: fit-content; margin: 1.5rem auto; display: flex; gap: 8rem; align-items: center; }
+
+    /* Background */
+    #Background { background-color: var(--color2); padding: 30rem 16rem; width: 15rem; height: 90vh; position: absolute; left: -5rem; top: -20rem;  z-index: -1;border-radius: 20rem; }
+    #Background2 { background-color: var(--color2); padding: 30rem 16rem; width: 15rem; height: 90vh; position: absolute; right: -5rem; bottom: -20rem;  z-index: -1;border-radius: 20rem; opacity: .2; }
+
+    /* Left */
+    #Left { position: relative; width: fit-content; border: solid white .7rem ; border-radius: 2rem; background-color: var(--color10); z-index: -1; box-shadow: 20px 45px 50px 1px var(--color6); }
+
+    /* Island */
+    #Island { margin: auto; background-color: white; padding: .9rem; width: 60%; display: flex; justify-self: center; border-bottom-left-radius: 1.2rem; border-bottom-right-radius: 1.2rem;  }
+
+    /* Top */
+    #Top { display: flex; justify-content: space-between; padding: 2.5rem 1rem 1rem 1rem; background: linear-gradient(to right, hsl(276, 55%, 52%) 40%, hsl(293, 100%, 63%) 100% ); position: relative; z-index: -1; top: -1.7rem; border-radius: .3rem;  border-top-left-radius: 1.5rem; border-top-right-radius: 1.5rem;}
+
+    /* Avatar */
+    #Avatar { display: flex; align-items: center; gap: .5rem; }
+    #Avatar img { width: 2rem; border-radius: 50%; border: solid gray 2px; }
+
+    /* Avavtar-1 */
+
+    /* Mid */
+    #Mid { display: flex; flex-direction: column; gap: 1.5rem; padding: 0 1rem; }
+
+    /* Mid-1 */
+    #Mid-1 { position: relative; left: 0; display: flex; flex-direction: column; gap: .5rem; }
+
+    /* Mid-2 */
+    #Mid-2 { display: flex; justify-content: space-between; gap: 5rem; }
+
+    #Mid-2-2 { position: relative; display: flex; flex-direction: column; gap: .5rem; }
+
+    /* Grid */
+    #Grid { display: flex; gap: 1rem; }
+    #Grid img { width: 3.5rem; border-radius: 1rem; }
+
+    /* Mid-3 */
+    #Mid-3 { display: flex; flex-direction: column; gap: .5rem; }
+
+    /* Radio1 */
+    #Radio1 { display: flex; align-items: center; justify-content: space-between; width: 14rem; background: linear-gradient(to left, hsl(276, 55%, 52%) 30%, hsl(293, 100%, 63%) 100% ); padding: .7rem 1rem; border-radius: 1rem; border-bottom-left-radius: .3rem; }
+    
+    /* Radio1-1 */
+    #Radio1-1 { display: flex; align-items: center; gap: .5rem; }
+    #Radio1-1 div { border: solid 1px var(--color1); padding: .5rem; border-radius: 50%; }
+
+    /* Radio1-2 */
+
+    /* Btm */
+    #Btm { display: flex; justify-content: space-between; background-color: white; padding: .4rem 1rem; border-radius: 2rem; }
+    #Btm input { outline: none; border: none; }
+    #Btm span { position: relative; right: -.5rem; font-weight: 700; color: white; background-color: black; padding: .4rem .7rem; border-radius: 50%;  }
+
+    /* Right */
+    #Right { width: 22rem; display: flex; flex-direction: column; gap: 1rem; }
+
+    /* Responsiveness */
+    @media screen and (max-width:500px) {
+    /* Background */
+    #Background {  left: -20rem; }
+
+    #Container { flex-direction: column; text-align: center; }
+    h2 { font-size: 3rem; color: var(--color11); }
+    #p-r { font-size: 1.3rem; color: var(--color6); }
+    #Background2 { display: none; }
+    body { overflow: visible; }
+    }
+
+    @media screen and (min-width:600px) and (max-width:900px) {
+    /* Background */
+    #Background { left: -8rem; }
+
+    #Container { flex-direction: column; text-align: center; }
+    h2 { font-size: 5rem; }
+    #p-r { font-size: 2rem; }
+    #Background2 { display: none; }
+    body { overflow: visible; }
+    }
+
+  </style>
+
+</head>
+<body>
+  <div id="Background"></div>
+  <div id="Container">
+
+    <div id="Left">
+      <div id="Island"></div>
+
+      <div id="Top">
+
+        <div id="Avatar">
+
+          <span> > </span> 
+
+          <img src="images/avatar.jpg" alt="">
+
+          <div id="Avatar-1">
+            <p>Samuel Green</p>
+            <p id="p1">Available for work</p>
+          </div>
+
+          
+        </div>
+        <span>...</span>
+
+      </div>
+
+      <div id="Mid">
+
+        <div id="Mid-1">
+          <p id="p2">That sounds great. I’d be happy with that.</p>
+          <p id="p2">Could you send over some pictures of your dog, please?</p>
+        </div>
+
+        <div id="Mid-2">
+          <div></div>
+          <div id="Mid-2-2">
+            <div id="Grid">
+              <img src="images/dog-image-1.jpg" alt="">
+              <img src="images/dog-image-2.jpg" alt="">
+              <img src="images/dog-image-3.jpg" alt="">
+            </div>
+            <p id="p3">Here are a few pictures. She’s a happy girl!</p>
+            <p id="p3" style="width: fit-content; padding: .6rem; position: relative; right: -5.7rem;">Can you make it?</p>
+          </div>
+        </div>
+
+        <div id="Mid-3">
+
+          <p id="p2">She looks so happy! The time we discussed works. How long shall I take her out for?</p>
+
+          <div id="Radio1">
+            <div id="Radio1-1">
+              <div></div>
+              <p id="p4">30 minute work</p>
+            </div>
+            <h3>$29</h3>
+          </div>
+
+          <div id="Radio1">
+            <div id="Radio1-1">
+              <div></div>
+              <p id="p4">1 hour work</p>
+            </div>
+            <h3>$49</h3>
+          </div>
+
+        </div>
+
+        <div id="Btm">
+          <input type="text" name="" id="" placeholder="Type a message">
+          <span id="Send">></span>
+        </div>
+        <div></div>
+      </div>
+
+
+    </div>
+
+    <div id="Right">
+      <h2>Simple booking</h2>
+      <p id="p-r">Stay in touch with our dog walkers through the chat interface. This makes it easy to discuss arrangements and make bookings. Once the walk has been completed you can rate your walker and book again all through the chat.</p>
+    </div>
+
+  </div>
+  <div id="Background2"></div>
+</body>
+</html>
